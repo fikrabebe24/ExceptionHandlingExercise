@@ -20,10 +20,16 @@ namespace ExceptionHandlingExercise
             //TODO START HERE:
 
             // 1) Create an char[], it must contain 6 numbers and 3 letters - name it arr
-            
+
+            char[] arr = new char[] { '4', '3', '2', '5', '7', '9', 'a', 'r', 'f' };
+
             // 2) Create a list called numbers that will hold integers
-        
+
+            var numbers = new List<int>();
+
             // 3) Create an string variable with an empty string initializer - name it str
+
+            string str = ""; //check back on this.
             
             // 4) Make a foreach loop to iterate through your character array            
                 // 5) Create a try-catch inide of your foreach loop
@@ -31,6 +37,23 @@ namespace ExceptionHandlingExercise
                         // 7) Set your string variable to each array element in your char[] to .ToString()
                         // 8) Now, using int.Parse, parse your string variable and store in an int variable
                         // 9) Then add each int to your list
+
+            foreach (char character in arr)
+            {
+                try
+                {
+                    str = character.ToString();
+                    var number = int.Parse(str);
+
+                    character.ToString();
+                    int i = int.Parse(str);
+                    numbers.Add(i);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Unable to parse {character}");
+                }
+            }
                 
                    // 10) Inside the catch block:
                        // 11) In the scope of your catch you can use the following code:                  
@@ -38,10 +61,10 @@ namespace ExceptionHandlingExercise
                 
             
             // Uncomment the code below to see the numbers you successfully added to the numbers list: 
-            //foreach (var num in numbers)
-            //{
-            //    Console.WriteLine(num);
-            //}
+            foreach (var num in numbers)
+            {
+                Console.WriteLine(num);
+            }
         }
     }
 }
